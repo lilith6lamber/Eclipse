@@ -14,8 +14,7 @@ $(document).ready(function () {
         pager: false,
         keyPress: true,
         slideMargin: 30,
-        responsive : [
-            {
+        responsive: [{
                 breakpoint: 769,
                 settings: {
                     item: 3,
@@ -56,21 +55,21 @@ $(document).ready(function () {
         speed: 2000
     });
 
-    $('#prev').click(function (e) { 
+    $('#prev').click(function (e) {
         e.preventDefault();
         ts.goToPrevSlide();
     });
-    $('#next').click(function (e) { 
+    $('#next').click(function (e) {
         e.preventDefault();
         ts.goToNextSlide();
     });
 
-    $('.menu-trigger').click(function (e) { 
+    $('.menu-trigger').click(function (e) {
         e.preventDefault();
         $('.nav-list').toggleClass('active_on_touch');
     });
 
-    $(window).resize(function () { 
+    $(window).resize(function () {
         replaceMarkup();
     });
 

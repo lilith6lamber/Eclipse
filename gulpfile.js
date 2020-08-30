@@ -1,5 +1,6 @@
 let gulp = require('gulp'),
     less = require('gulp-less'),
+    cleanCSS = require('gulp-clean-css'),
     cssnano = require('gulp-cssnano'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
@@ -27,7 +28,8 @@ gulp.task('prefix', () => {
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 15 versions'],
 			cascade: false
-		}))
+        }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(gulp.dest(pathSrc + 'css'));
 });
 
